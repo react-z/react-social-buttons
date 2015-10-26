@@ -1,0 +1,35 @@
+{
+  "name": "content-edit",
+  "version": "1.0.0",
+  "description": "social buttons component for react, includes google, facebook, twitter, pinterest and more",
+  "main": "lib/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StevenIseki/react-social-buttons.git"
+  },
+  "keywords": [
+    "react-social-buttons",
+    "social-buttons",
+    "react-social",
+    "react",
+    "react-buttons",
+    "react social",
+    "react social buttons",
+    "react social icons",
+    "social icons"
+  ],
+  "author": "Steven Iseki",
+  "license": "MIT",
+  "homepage": "https://github.com/StevenIseki/react-social-buttons.git",
+  "peerDependencies": {
+    "react": "^0.13.0"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "mocha test/test.js",
+    "build": "babel src --out-dir lib"
+  }
+}
