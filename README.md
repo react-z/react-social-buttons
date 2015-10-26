@@ -21,20 +21,14 @@ class App {
 }
 ```
 
-## Running Tests server side
+## Running Tests
 
 **modify test.js for any tests**
 
     npm install
     npm test
 
-## Running Tests client side
-
-**modify test.js for any tests**
-
-    npm install
-
-make sure you have webpack installed globally
+**to run tests in the browser...**
 
 `npm install webpack -g`
 
