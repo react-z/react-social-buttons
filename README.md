@@ -4,6 +4,9 @@
 
 social buttons component for react, includes google, facebook, twitter, pinterest and more
 
+![](https://raw.githubusercontent.com/StevenIseki/react-social-buttons/master/examples/screenshot.png)
+
+
 ``` js
 import { FacebookLikeButton, TwitterButton } from 'react-social-buttons';
 
@@ -22,21 +25,19 @@ class App {
 ```
 ## Examples
 
-![](examples/screenshot.png)
-
-**simple example**
+**[simple example](https://github.com/StevenIseki/react-social-buttons/tree/master/examples/simple)**
 
     npm run start-simple
 
-- then open `http://127.0.0.1:5000`
+then open `http://127.0.0.1:5000`
 
-**react router example**
+**[react router example](https://github.com/StevenIseki/react-social-buttons/tree/master/examples/react-router)**
 
     npm run start-rr
 
-- then open `http://127.0.0.1:5000`
+then open `http://127.0.0.1:5000`
 
-- there is a home route which lists the books, and each book has all the social buttons
+there is a home route which lists some books, each book has some social buttons
 
 ## Development
 
