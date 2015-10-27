@@ -1,6 +1,6 @@
 {
   "name": "react-social-buttons",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "social buttons component for react, includes google, facebook, twitter, pinterest and more",
   "main": "lib/main.js",
   "repository": {
