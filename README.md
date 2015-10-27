@@ -1,6 +1,6 @@
 ## react-social-buttons
 
-[![npm version](https://badge.fury.io/js/detectie.svg)](https://badge.fury.io/js/detectie)
+[![npm version](https://badge.fury.io/js/react-social-buttons.svg)](https://badge.fury.io/js/react-social-buttons)
 
 social buttons component for react, includes google, facebook, twitter, pinterest and more
 
