@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class FacebookButton extends React.Component{
+export default class FacebookLikeButton extends React.Component{
 
   constructor(props) {
     super(props)
@@ -8,10 +8,6 @@ export default class FacebookButton extends React.Component{
   }
 
   componentDidMount(){
-    this.init()
-  }
-
-  componentWillReceiveProps(nextProps) {  
     this.init()
   }
 
@@ -33,22 +29,35 @@ export default class FacebookButton extends React.Component{
   componentWillUnmount(){
     let elem = document.getElementById('facebook-jssdk')
     if(elem !== undefined){
-      //elem.parentNode.removeChild(elem);
+      elem.parentNode.removeChild(elem);
     }
   }
 
-  renderWidget(){
-    if(this.props.type == "share"){
-      
-      FB.XFBML.parse(
-        React.findDOMNode(this.refs.fbbutton)
-      );
-    }
+  renderWidget(){      
+      /* 
+         need to detect if it has already been parsed.
+         if coming from react router it may need reparsing.
+      */
+      setTimeout(function () {
+        let elem = document.getElementById('fbbutton')
+        if(elem.getAttribute('fb-xfbml-state') === null){
+          FB.XFBML.parse();
+        }        
+      }, 1000)
   }
 
   render(){
     return (
-      <div ref="fbbutton" className="fb-like" data-href={this.props.url} data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+      <div id='fbbutton' 
+           ref="fbbutton" 
+           className="fb-like" 
+           data-href={this.props.url}
+           data-layout="standard" 
+           data-action="like" 
+           data-show-faces="true" 
+           data-share="true">
+      </div>
     );
 
   }

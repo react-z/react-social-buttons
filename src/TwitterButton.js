@@ -11,10 +11,6 @@ export default class TwitterButton extends React.Component{
     this.init()
   }
 
-  componentWillReceiveProps(nextProps) {  
-    this.init()
-  }
-
   init () {
     if(this.state.initalized){
       return
@@ -32,17 +28,21 @@ export default class TwitterButton extends React.Component{
   componentWillUnmount(){
     let elem = document.getElementById("twitter-wjs")
     if(elem !== undefined){
-      //elem.parentNode.removeChild(elem);
+      elem.parentNode.removeChild(elem);
     }
   }
 
   renderWidget(){
-    if(this.props.type == "share"){
-      twttr.widgets.createShareButton(
-        this.props.url,
-        React.findDOMNode(this.refs.twitterbutton), { text: this.props.text }
-      );
+    let text = ''
+    if(this.props.text != undefined){
+      text = this.props.text
     }
+
+    twttr.widgets.createShareButton(
+      this.props.url,
+      React.findDOMNode(this.refs.twitterbutton),
+      { text: text }
+    );
   }
 
   render(){

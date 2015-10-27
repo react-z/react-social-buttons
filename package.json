@@ -1,5 +1,5 @@
 {
-  "name": "content-edit",
+  "name": "react-social-buttons",
   "version": "1.0.0",
   "description": "social buttons component for react, includes google, facebook, twitter, pinterest and more",
   "main": "lib/main.js",
@@ -26,10 +26,22 @@
   },
   "devDependencies": {
     "chai": "*",
-    "mocha": "*"
+    "mocha": "*",
+    "babel-core": "^5.8.3",
+    "babel-loader": "^5.3.2",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "webpack": "^1.10.5",
+    "express": "^4.7.2"
   },
   "scripts": {
     "test": "mocha test/test.js",
-    "build": "babel src --out-dir lib"
+    "build": "babel src --out-dir lib",
+    "example-rr": "webpack --config ./examples/react-router/webpack.config.js",
+    "serve-rr": "node ./examples/react-router/server.js",
+    "start-rr": "npm run example-rr && npm run serve-rr",
+    "example-simple": "webpack --config ./examples/simple/webpack.config.js",
+    "serve-simple": "node ./examples/simple/server.js",
+    "start-simple": "npm run example-simple && npm run serve-simple"
   }
 }

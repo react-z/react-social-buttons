@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class GoogleButton extends React.Component{
+export default class GoogleHangoutButton extends React.Component{
 
   constructor(props) {
     super(props)
@@ -16,12 +16,12 @@ export default class GoogleButton extends React.Component{
       return
     }
 
-    let gpbutton = React.findDOMNode(this.refs.gpbutton)
+    let ghbutton = React.findDOMNode(this.refs.ghbutton)
     let gpscript = document.createElement('script')
     gpscript.src = '//apis.google.com/js/platform.js'
     gpscript.id = 'gapi'
     gpscript.onload = this.renderWidget.bind(this)
-    gpbutton.parentNode.appendChild(gpscript)
+    ghbutton.parentNode.appendChild(gpscript)
 
     this.setState({initalized: true });
   }
@@ -34,22 +34,21 @@ export default class GoogleButton extends React.Component{
   }
 
   renderWidget(){
-    gapi.plusone.render('gpbutton');
+
+    gapi.hangout.render('ghbutton', {
+      'topic': 'cats',
+      'render': 'createhangout',
+      'hangout_type': 'onair',
+      'initial_apps': [{'app_id' : '184219133185', 'start_data' : 'dQw4w9WgXcQ', 'app_type' : 'ROOM_APP' }],
+      'widget_size': 72
+    });
+
   }
 
   render(){
     return (
-   
-      <div ref='gpbutton'
-           id='gpbutton'
-           className="g-plusone"
-           expandTo='top'
-           data-annotation='bubble'
-           data-align='left'
-           data-width='300'
-           data-size='standard'
-           data-recommendations='true'
-           data-href={this.props.url} >
+      <div ref='ghbutton'
+           id='ghbutton' >
       </div>
     );
 

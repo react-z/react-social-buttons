@@ -1,14 +1,13 @@
 var chai = require('chai');
-var contentEdit = require('../lib/contentEdit');
+var contentEdit = require('../lib/FacebookLikeButton');
 var assert = chai.assert;
 var expect = chai.expect;
 var should = chai.should();
 
-describe('contentEdit()', function() {  
+describe('FacebookLikeButton()', function() {  
     
-    it('should place the caret at the start', function() {
-    	var el = document.getElementById("content");
-    	var result = contentEdit.placeCaretAtStart(el);
-        assert.equal(result, undefined);
+    it('should be defined', function() {
+    	var el = document.getElementById("fbbutton");
+        assert.equal(el, undefined);
     })
 })
