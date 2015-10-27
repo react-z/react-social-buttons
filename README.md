@@ -6,6 +6,13 @@ social buttons component for react, includes google, facebook, twitter, pinteres
 
 ![](https://raw.githubusercontent.com/StevenIseki/react-social-buttons/master/examples/screenshot.png)
 
+## Install
+
+``` js
+npm install react-social-buttons --save
+```
+
+## Use
 
 ``` js
 import { FacebookLikeButton, TwitterButton } from 'react-social-buttons';
