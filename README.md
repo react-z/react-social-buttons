@@ -4,7 +4,7 @@
 
 social buttons component for react, includes google, facebook, twitter, pinterest and more
 
-![](https://raw.githubusercontent.com/StevenIseki/react-social-buttons/master/examples/screenshot.png)
+![](https://raw.githubusercontent.com/StevenIseki/react-social-buttons/master/example/screenshot.png)
 
 ## Install
 
