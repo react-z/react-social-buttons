@@ -16,7 +16,7 @@ npm install react-social-buttons --save
 
 #### `1.0.3` uses React `^0.13.1`
 
-#### `1.0.5` uses React `^0.15.1`
+#### `1.0.5` uses React `^15.1.0`
 
 ## Use
 
