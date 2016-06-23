@@ -1,4 +1,5 @@
-import React from 'react'
+import ReactDOM from 'react-dom'
+import React, { Component, PropTypes } from 'react'
 
 export default class PinterestButton extends React.Component{
 
@@ -15,7 +16,7 @@ export default class PinterestButton extends React.Component{
     if(this.state.initalized){
       return
     }
-    var pinbutton = React.findDOMNode(this.refs.pinbutton)
+    var pinbutton = ReactDOM.findDOMNode(this.refs.pinbutton)
     var pinscript = document.createElement("script")
     pinscript.src = "//assets.pinterest.com/js/pinit.js"
     pinscript.id = 'pinit-script'
@@ -32,13 +33,13 @@ export default class PinterestButton extends React.Component{
     }
   }
 
-  renderWidget(){    
+  renderWidget(){
   }
 
   render() {
   	return (
 
-	  	<a ref='pinbutton' 
+	  	<a ref='pinbutton'
 	  	   id='pinbutton'
 	  	   data-pin-do='buttonBookmark'
 	  	   href='//www.pinterest.com/pin/create/button/' >

@@ -1,4 +1,5 @@
-import React from 'react'
+import ReactDOM from 'react-dom'
+import React, { Component, PropTypes } from 'react'
 
 export default class TwitterButton extends React.Component{
 
@@ -15,7 +16,7 @@ export default class TwitterButton extends React.Component{
     if(this.state.initalized){
       return
     }
-    var twitterbutton = React.findDOMNode(this.refs.twitterbutton)
+    var twitterbutton = ReactDOM.findDOMNode(this.refs.twitterbutton)
     var twitterscript = document.createElement("script")
     twitterscript.src = "//platform.twitter.com/widgets.js"
     twitterscript.id = 'twitter-wjs'
@@ -40,7 +41,7 @@ export default class TwitterButton extends React.Component{
 
     twttr.widgets.createShareButton(
       this.props.url,
-      React.findDOMNode(this.refs.twitterbutton),
+      ReactDOM.findDOMNode(this.refs.twitterbutton),
       { text: text }
     );
   }

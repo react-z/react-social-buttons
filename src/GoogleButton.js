@@ -1,4 +1,5 @@
-import React from 'react'
+import ReactDOM from 'react-dom'
+import React, { Component, PropTypes } from 'react'
 
 export default class GoogleButton extends React.Component{
 
@@ -16,7 +17,7 @@ export default class GoogleButton extends React.Component{
       return
     }
 
-    let gpbutton = React.findDOMNode(this.refs.gpbutton)
+    let gpbutton = ReactDOM.findDOMNode(this.refs.gpbutton)
     let gpscript = document.createElement('script')
     gpscript.src = '//apis.google.com/js/platform.js'
     gpscript.id = 'gapi'
@@ -39,7 +40,7 @@ export default class GoogleButton extends React.Component{
 
   render(){
     return (
-   
+
       <div ref='gpbutton'
            id='gpbutton'
            className="g-plusone"

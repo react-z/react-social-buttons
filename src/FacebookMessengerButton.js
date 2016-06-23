@@ -1,4 +1,5 @@
-import React from 'react'
+import ReactDOM from 'react-dom'
+import React, { Component, PropTypes } from 'react'
 
 export default class FacebookMessengerButton extends React.Component{
 
@@ -16,7 +17,7 @@ export default class FacebookMessengerButton extends React.Component{
       return
     }
 
-    let fbsendbutton = React.findDOMNode(this.refs.fbsendbutton)
+    let fbsendbutton = ReactDOM.findDOMNode(this.refs.fbsendbutton)
     let fbscript = document.createElement('script')
     fbscript.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=230650050380161'
     fbscript.id = 'facebook-jssdk'
@@ -33,8 +34,8 @@ export default class FacebookMessengerButton extends React.Component{
     }
   }
 
-  renderWidget(){      
-      /* 
+  renderWidget(){
+      /*
          need to detect if it has already been parsed.
          if coming from react router it may need reparsing.
       */
@@ -42,15 +43,15 @@ export default class FacebookMessengerButton extends React.Component{
         let elem = document.getElementById('fbsendbutton')
         if(elem.getAttribute('fb-xfbml-state') === null){
           FB.XFBML.parse();
-        }        
+        }
       }, 1000)
   }
 
   render(){
     return (
-      <div id='fbsendbutton' 
-           ref='fbsendbutton' 
-           className='fb-send' 
+      <div id='fbsendbutton'
+           ref='fbsendbutton'
+           className='fb-send'
            data-href={this.props.url} >
       </div>
     );

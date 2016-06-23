@@ -1,4 +1,5 @@
-import React from 'react'
+import ReactDOM from 'react-dom'
+import React, { Component, PropTypes } from 'react'
 
 export default class GoogleHangoutButton extends React.Component{
 
@@ -16,7 +17,7 @@ export default class GoogleHangoutButton extends React.Component{
       return
     }
 
-    let ghbutton = React.findDOMNode(this.refs.ghbutton)
+    let ghbutton = ReactDOM.findDOMNode(this.refs.ghbutton)
     let gpscript = document.createElement('script')
     gpscript.src = '//apis.google.com/js/platform.js'
     gpscript.id = 'gapi'

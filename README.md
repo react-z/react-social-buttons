@@ -12,60 +12,53 @@ social buttons component for react, includes google, facebook, twitter, pinteres
 npm install react-social-buttons --save
 ```
 
+## Versions
+
+#### `1.0.3` uses React `^0.13.1`
+
+#### `1.0.5` uses React `^0.15.1`
+
 ## Use
 
 ``` js
-import { FacebookLikeButton, TwitterButton } from 'react-social-buttons';
+import ReactDOM from 'react-dom'
+import React, { Component, PropTypes } from 'react'
+import { TwitterButton, FacebookLikeButton, FacebookShareButton, FacebookMessengerButton,
+         GoogleButton, GoogleHangoutButton, PinterestButton } from 'react-social-buttons'
 
-class App {
-  render {
-    let url = "https://github.com";
+class TestComponent extends Component {
 
-    return (
-      <div>
-        <FacebookLikeButton url={url} />
-        <TwitterButton url={url} />
-      </div>
-    );
+  isBrowser () {
+    return !(typeof document === "undefined" || typeof window === "undefined");
   }
+
+ render () {
+   let url = ''
+   if (this.isBrowser()) { url = window.location.href; }
+
+   return (
+     <div id="buttons">
+       <FacebookLikeButton url={url} />
+       <FacebookShareButton url={url} />
+       <FacebookMessengerButton url={url} />
+       <TwitterButton url={url} text="this page is cool"/>
+       <GoogleButton url={url} />
+       <GoogleHangoutButton url={url} />
+       <PinterestButton url={url} />
+     </div>
+   )
+ }
 }
+
+ReactDOM.render( <TestComponent />, document.getElementById('root') )
 ```
-## Examples
-
-**[simple example](https://github.com/StevenIseki/react-social-buttons/tree/master/examples/simple)**
-
-    npm run start-simple
-
-then open `http://127.0.0.1:5000`
-
-**[react router example](https://github.com/StevenIseki/react-social-buttons/tree/master/examples/react-router)**
-
-    npm run start-rr
-
-then open `http://127.0.0.1:5000`
-
-there is a home route which lists some books, each book has some social buttons
 
 ## Development
 
-**build src to lib**
-
-    npm run build
-
-**run tests**
-
     npm install
+    npm run build
     npm test
-
-**to run tests in the browser...**
-
-`npm install webpack -g`
-
-compile test.js to a bundle with webpack
-
-	webpack ./test/test.js ./test/test-bundle.js
-
-open test.html to view the tests in the browser
+    npm start
 
 ## License
 
