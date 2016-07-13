@@ -21,10 +21,18 @@ npm install react-social-buttons --save
 ## Use
 
 ``` js
-import ReactDOM from 'react-dom'
-import React, { Component, PropTypes } from 'react'
-import { TwitterButton, FacebookLikeButton, FacebookShareButton, FacebookMessengerButton,
-         GoogleButton, GoogleHangoutButton, PinterestButton } from 'react-social-buttons'
+import ReactDOM from 'react-dom';
+import React, { Component, PropTypes } from 'react';
+import {
+  TwitterButton,
+  FacebookLikeButton,
+  FacebookShareButton,
+  FacebookMessengerButton,
+  GoogleButton,
+  GoogleHangoutButton,
+  PinterestButton,
+  WhatsAppButton
+} from 'react-social-buttons';
 
 class TestComponent extends Component {
 
@@ -36,6 +44,11 @@ class TestComponent extends Component {
    let url = ''
    if (this.isBrowser()) { url = window.location.href; }
 
+   let whatsAppProps = {
+     msg: 'test',
+     button: <span>{'Your custom content'}</span>,
+   };
+
    return (
      <div id="buttons">
        <FacebookLikeButton url={url} />
@@ -45,6 +58,7 @@ class TestComponent extends Component {
        <GoogleButton url={url} />
        <GoogleHangoutButton url={url} />
        <PinterestButton url={url} />
+       <WhatsAppButton {...whatsAppProps} />
      </div>
    )
  }
