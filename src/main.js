@@ -1,10 +1,11 @@
-import TwitterButton from './TwitterButton'
-import FacebookLikeButton from './FacebookLikeButton'
-import FacebookShareButton from './FacebookShareButton'
-import FacebookMessengerButton from './FacebookMessengerButton'
-import GoogleButton from './GoogleButton'
-import GoogleHangoutButton from './GoogleHangoutButton'
-import PinterestButton from './PinterestButton'
+import TwitterButton from './TwitterButton';
+import FacebookLikeButton from './FacebookLikeButton';
+import FacebookShareButton from './FacebookShareButton';
+import FacebookMessengerButton from './FacebookMessengerButton';
+import GoogleButton from './GoogleButton';
+import GoogleHangoutButton from './GoogleHangoutButton';
+import PinterestButton from './PinterestButton';
+import WhatsAppButton from './WhatsAppButton';
 
 export {
 	TwitterButton,
@@ -13,5 +14,6 @@ export {
 	FacebookMessengerButton,
 	GoogleButton,
 	GoogleHangoutButton,
-	PinterestButton
+	PinterestButton,
+	WhatsAppButton,
 }
