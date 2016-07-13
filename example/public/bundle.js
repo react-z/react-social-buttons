@@ -90,6 +90,14 @@
 	        url = window.location.href;
 	      }
 
+	      var whatsAppProps = {
+	        msg: url,
+	        button: _react2.default.createElement('img', {
+	          src: 'http://4.bp.blogspot.com/-lpSFmxRBGHk/VS_qaC4lVpI/' + 'AAAAAAAADVA/_w2ak19mhYU/s1600/whatsapp-share-button.png',
+	          width: 100
+	        })
+	      };
+
 	      return _react2.default.createElement(
 	        'div',
 	        { id: 'buttons' },
@@ -105,7 +113,9 @@
 	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(_main.GoogleHangoutButton, { url: url }),
 	        _react2.default.createElement('br', null),
-	        _react2.default.createElement(_main.PinterestButton, { url: url })
+	        _react2.default.createElement(_main.PinterestButton, { url: url }),
+	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(_main.WhatsAppButton, whatsAppProps)
 	      );
 	    }
 	  }]);
@@ -20417,7 +20427,7 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.PinterestButton = exports.GoogleHangoutButton = exports.GoogleButton = exports.FacebookMessengerButton = exports.FacebookShareButton = exports.FacebookLikeButton = exports.TwitterButton = undefined;
+	exports.WhatsAppButton = exports.PinterestButton = exports.GoogleHangoutButton = exports.GoogleButton = exports.FacebookMessengerButton = exports.FacebookShareButton = exports.FacebookLikeButton = exports.TwitterButton = undefined;
 
 	var _TwitterButton = __webpack_require__(169);
 
@@ -20447,6 +20457,10 @@
 
 	var _PinterestButton2 = _interopRequireDefault(_PinterestButton);
 
+	var _WhatsAppButton = __webpack_require__(176);
+
+	var _WhatsAppButton2 = _interopRequireDefault(_WhatsAppButton);
+
 	function _interopRequireDefault(obj) {
 		return obj && obj.__esModule ? obj : { default: obj };
 	}
@@ -20458,6 +20472,7 @@
 	exports.GoogleButton = _GoogleButton2.default;
 	exports.GoogleHangoutButton = _GoogleHangoutButton2.default;
 	exports.PinterestButton = _PinterestButton2.default;
+	exports.WhatsAppButton = _WhatsAppButton2.default;
 
 /***/ },
 /* 169 */
@@ -21290,6 +21305,86 @@
 	}(_react2.default.Component);
 
 	exports.default = PinterestButton;
+
+/***/ },
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () {
+	  function defineProperties(target, props) {
+	    for (var i = 0; i < props.length; i++) {
+	      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	    }
+	  }return function (Constructor, protoProps, staticProps) {
+	    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	  };
+	}();
+
+	var _reactDom = __webpack_require__(1);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _react = __webpack_require__(162);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { default: obj };
+	}
+
+	function _classCallCheck(instance, Constructor) {
+	  if (!(instance instanceof Constructor)) {
+	    throw new TypeError("Cannot call a class as a function");
+	  }
+	}
+
+	function _possibleConstructorReturn(self, call) {
+	  if (!self) {
+	    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	  }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	}
+
+	function _inherits(subClass, superClass) {
+	  if (typeof superClass !== "function" && superClass !== null) {
+	    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+	  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	}
+
+	var WhatsAppButton = function (_Component) {
+	  _inherits(WhatsAppButton, _Component);
+
+	  function WhatsAppButton() {
+	    _classCallCheck(this, WhatsAppButton);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(WhatsAppButton).apply(this, arguments));
+	  }
+
+	  _createClass(WhatsAppButton, [{
+	    key: 'render',
+	    value: function render() {
+	      var props = this.props;
+
+	      return _react2.default.createElement('a', { href: 'whatsapp://send?text=' + props.msg }, props.button);
+	    }
+	  }]);
+
+	  return WhatsAppButton;
+	}(_react.Component);
+
+	exports.default = WhatsAppButton;
+
+	WhatsAppButton.propTypes = {
+	  msg: _react.PropTypes.string.isRequired,
+	  button: _react.PropTypes.node.isRequired
+	};
 
 /***/ }
 /******/ ]);
