@@ -6,6 +6,7 @@ import GoogleButton from './GoogleButton';
 import GoogleHangoutButton from './GoogleHangoutButton';
 import PinterestButton from './PinterestButton';
 import WhatsAppButton from './WhatsAppButton';
+import RedditButton from './RedditButton';
 
 export {
 	TwitterButton,
@@ -16,4 +17,5 @@ export {
 	GoogleHangoutButton,
 	PinterestButton,
 	WhatsAppButton,
+	RedditButton,
 }
