@@ -8,7 +8,8 @@ import {
   GoogleButton,
   GoogleHangoutButton,
   PinterestButton,
-  WhatsAppButton
+  WhatsAppButton,
+  RedditButton
 } from '../lib/main.js'; /* 'react-social-buttons' */
 
 class TestComponent extends Component {
@@ -32,6 +33,14 @@ class TestComponent extends Component {
      />
    };
 
+   const redditPorps = {
+     url,
+     button: <img src={'//www.redditstatic.com/spreddit1.gif'}
+        alt={'submit to reddit'}
+        border={'0'}
+      />
+   };
+
    return (
      <div id="buttons">
        <FacebookLikeButton url={url} />
@@ -49,6 +58,8 @@ class TestComponent extends Component {
        <PinterestButton url={url} />
        <br />
        <WhatsAppButton {...whatsAppProps} />
+       <br />
+       <RedditButton {...redditPorps} />
      </div>
    )
  }

@@ -12,15 +12,17 @@ import {
   GoogleHangoutButton,
   PinterestButton,
   WhatsAppButton,
+  RedditButton,
 } from '../src/main.js';
 
 test('Social components', (t) => {
   setupJsdom();
 
-  const fb = mount( <FacebookLikeButton url='https://mysite.com' /> );
-  const tw = mount( <TwitterButton url='https://mysite.com' /> );
-  const goo = mount( <GoogleButton url='https://mysite.com' /> );
-  const pin = mount( <PinterestButton url='https://mysite.com' /> );
+  const url = 'https://mysite.com';
+  const fb = mount( <FacebookLikeButton url={url} /> );
+  const tw = mount( <TwitterButton url={url} /> );
+  const goo = mount( <GoogleButton url={url} /> );
+  const pin = mount( <PinterestButton url={url} /> );
 
   // WhatsAppButton
   const whatsAppProps = {
@@ -29,20 +31,30 @@ test('Social components', (t) => {
   };
   const wapp = mount( <WhatsAppButton {...whatsAppProps} /> );
 
+  // RedditButton
+  const redditPorps = {
+    url,
+    button: <span>{'Share via Reddit'}</span>,
+  };
+  const reddit = mount( <RedditButton {...redditPorps} /> );
+
   t.equal(
-    fb.props().url, 'https://mysite.com', 'url is set for facebook like button'
+    fb.props().url, url, 'url is set for facebook like button'
   );
   t.equal(
-    tw.props().url, 'https://mysite.com', 'url is set for twitter button'
+    tw.props().url, url, 'url is set for twitter button'
   );
   t.equal(
-    goo.props().url, 'https://mysite.com', 'url is set for google button'
+    goo.props().url, url, 'url is set for google button'
   );
   t.equal(
-    pin.props().url, 'https://mysite.com', 'url is set for pinterest button'
+    pin.props().url, url, 'url is set for pinterest button'
   );
   t.equal(
     wapp.props().msg, 'test', 'message is set for whatsapp button'
+  );
+  t.equal(
+    reddit.props().url, url, 'url is set for reddit button'
   );
 
   t.end();
