@@ -16,7 +16,7 @@ npm install react-social-buttons --save
 
 #### `1.0.3` uses React `^0.13.1`
 
-#### `1.0.5` uses React `^15.1.0`
+#### `1.0.8` uses React `^15.1.0`
 
 ## Use
 
@@ -31,7 +31,8 @@ import {
   GoogleButton,
   GoogleHangoutButton,
   PinterestButton,
-  WhatsAppButton
+  WhatsAppButton,
+  RedditButton
 } from 'react-social-buttons';
 
 class TestComponent extends Component {
@@ -44,9 +45,15 @@ class TestComponent extends Component {
    let url = ''
    if (this.isBrowser()) { url = window.location.href; }
 
-   let whatsAppProps = {
+   const whatsAppProps = {
      msg: 'test',
      button: <span>{'Your custom content'}</span>,
+   };
+
+   const redditProps = {
+     url,
+     button: <img src={'//www.redditstatic.com/spreddit1.gif'}
+                  alt={'submit to reddit'} border={'0'} />
    };
 
    return (
@@ -59,6 +66,7 @@ class TestComponent extends Component {
        <GoogleHangoutButton url={url} />
        <PinterestButton url={url} />
        <WhatsAppButton {...whatsAppProps} />
+       <RedditButton {...redditProps} />
      </div>
    )
  }
