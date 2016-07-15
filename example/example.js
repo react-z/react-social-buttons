@@ -1,7 +1,16 @@
 import ReactDOM from 'react-dom'
 import React, { Component, PropTypes } from 'react'
-import { TwitterButton, FacebookLikeButton, FacebookShareButton, FacebookMessengerButton,
-         GoogleButton, GoogleHangoutButton, PinterestButton } from '../lib/main.js' /* 'react-social-buttons' */
+import {
+  TwitterButton,
+  FacebookLikeButton,
+  FacebookShareButton,
+  FacebookMessengerButton,
+  GoogleButton,
+  GoogleHangoutButton,
+  PinterestButton,
+  WhatsAppButton,
+  RedditButton
+} from '../lib/main.js'; /* 'react-social-buttons' */
 
 class TestComponent extends Component {
 
@@ -14,6 +23,23 @@ class TestComponent extends Component {
    if (this.isBrowser()) {
      url = window.location.href;
    }
+
+   const whatsAppProps = {
+     msg: url,
+     button: <img
+      src={'http://4.bp.blogspot.com/-lpSFmxRBGHk/VS_qaC4lVpI/' +
+        'AAAAAAAADVA/_w2ak19mhYU/s1600/whatsapp-share-button.png'}
+      width={100}
+     />
+   };
+
+   const redditProps = {
+     url,
+     button: <img src={'//www.redditstatic.com/spreddit1.gif'}
+        alt={'submit to reddit'}
+        border={'0'}
+      />
+   };
 
    return (
      <div id="buttons">
@@ -30,6 +56,10 @@ class TestComponent extends Component {
        <GoogleHangoutButton url={url} />
        <br />
        <PinterestButton url={url} />
+       <br />
+       <WhatsAppButton {...whatsAppProps} />
+       <br />
+       <RedditButton {...redditProps} />
      </div>
    )
  }

@@ -16,15 +16,24 @@ npm install react-social-buttons --save
 
 #### `1.0.3` uses React `^0.13.1`
 
-#### `1.0.5` uses React `^15.1.0`
+#### `1.0.8` uses React `^15.1.0`
 
 ## Use
 
 ``` js
-import ReactDOM from 'react-dom'
-import React, { Component, PropTypes } from 'react'
-import { TwitterButton, FacebookLikeButton, FacebookShareButton, FacebookMessengerButton,
-         GoogleButton, GoogleHangoutButton, PinterestButton } from 'react-social-buttons'
+import ReactDOM from 'react-dom';
+import React, { Component, PropTypes } from 'react';
+import {
+  TwitterButton,
+  FacebookLikeButton,
+  FacebookShareButton,
+  FacebookMessengerButton,
+  GoogleButton,
+  GoogleHangoutButton,
+  PinterestButton,
+  WhatsAppButton,
+  RedditButton
+} from 'react-social-buttons';
 
 class TestComponent extends Component {
 
@@ -36,6 +45,17 @@ class TestComponent extends Component {
    let url = ''
    if (this.isBrowser()) { url = window.location.href; }
 
+   const whatsAppProps = {
+     msg: 'test',
+     button: <span>{'Your custom content'}</span>,
+   };
+
+   const redditProps = {
+     url,
+     button: <img src={'//www.redditstatic.com/spreddit1.gif'}
+                  alt={'submit to reddit'} border={'0'} />
+   };
+
    return (
      <div id="buttons">
        <FacebookLikeButton url={url} />
@@ -45,6 +65,8 @@ class TestComponent extends Component {
        <GoogleButton url={url} />
        <GoogleHangoutButton url={url} />
        <PinterestButton url={url} />
+       <WhatsAppButton {...whatsAppProps} />
+       <RedditButton {...redditProps} />
      </div>
    )
  }
