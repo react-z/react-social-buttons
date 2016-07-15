@@ -13,6 +13,7 @@ import {
   PinterestButton,
   WhatsAppButton,
   RedditButton,
+  EmailButton,
 } from '../src/main.js';
 
 test('Social components', (t) => {
@@ -37,6 +38,16 @@ test('Social components', (t) => {
     button: <span>{'Share via Reddit'}</span>,
   };
   const reddit = mount( <RedditButton {...redditPorps} /> );
+
+  // EmailButton
+  const emailProps = {
+    subject: 'Test email',
+    cc: 'test@gmail.com',
+    bcc: 'test@gmail.com',
+    body: 'Your test message',
+    button: <span>{'Share via Email'}</span>,
+  };
+  const email = mount( <EmailButton {...emailProps} /> );
 
   t.equal(
     fb.props().url, url, 'url is set for facebook like button'
