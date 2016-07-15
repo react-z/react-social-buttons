@@ -2,7 +2,15 @@
 
 [![npm version](https://badge.fury.io/js/react-social-buttons.svg)](https://badge.fury.io/js/react-social-buttons)
 
-social buttons component for react, includes google, facebook, twitter, pinterest and more
+Social buttons component for react, includes:
+  Google;
+  GoogleHangout;
+  Facebook;
+  Twitter;
+  Pinterest;
+  Reddit;
+  WhatsApp;
+  Email;
 
 ![](https://raw.githubusercontent.com/StevenIseki/react-social-buttons/master/example/screenshot.png)
 
@@ -16,7 +24,7 @@ npm install react-social-buttons --save
 
 #### `1.0.3` uses React `^0.13.1`
 
-#### `1.0.8` uses React `^15.1.0`
+#### `1.0.9` uses React `^15.1.0`
 
 ## Use
 
@@ -32,7 +40,8 @@ import {
   GoogleHangoutButton,
   PinterestButton,
   WhatsAppButton,
-  RedditButton
+  RedditButton,
+  EmailButton,
 } from 'react-social-buttons';
 
 class TestComponent extends Component {
@@ -53,7 +62,15 @@ class TestComponent extends Component {
    const redditProps = {
      url,
      button: <img src={'//www.redditstatic.com/spreddit1.gif'}
-                  alt={'submit to reddit'} border={'0'} />
+                  alt={'submit to reddit'} border={'0'} />,
+   };
+
+   const emailProps = {
+     subject: 'Test email',
+     cc: 'test@gmail.com',
+     bcc: 'test@gmail.com',
+     body: 'Your test message',
+     button: <span>{'Share via Email'}</span>,
    };
 
    return (
@@ -61,12 +78,13 @@ class TestComponent extends Component {
        <FacebookLikeButton url={url} />
        <FacebookShareButton url={url} />
        <FacebookMessengerButton url={url} />
-       <TwitterButton url={url} text="this page is cool"/>
+       <TwitterButton url={url} text={'this page is cool'}/>
        <GoogleButton url={url} />
        <GoogleHangoutButton url={url} />
        <PinterestButton url={url} />
        <WhatsAppButton {...whatsAppProps} />
        <RedditButton {...redditProps} />
+       <EmailButton {...emailProps} />
      </div>
    )
  }
