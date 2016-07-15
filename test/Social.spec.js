@@ -48,7 +48,7 @@ test('Social components', (t) => {
     button: <span>{'Share via Email'}</span>,
   };
   const email = mount( <EmailButton {...emailProps} /> );
-
+  
   t.equal(
     fb.props().url, url, 'url is set for facebook like button'
   );
@@ -66,6 +66,9 @@ test('Social components', (t) => {
   );
   t.equal(
     reddit.props().url, url, 'url is set for reddit button'
+  );
+  t.equal(
+    email.props().subject, emailProps.subject, 'subject is set for email button'
   );
 
   t.end();
