@@ -33,7 +33,7 @@ class TestComponent extends Component {
      />
    };
 
-   const redditPorps = {
+   const redditProps = {
      url,
      button: <img src={'//www.redditstatic.com/spreddit1.gif'}
         alt={'submit to reddit'}
@@ -59,7 +59,7 @@ class TestComponent extends Component {
        <br />
        <WhatsAppButton {...whatsAppProps} />
        <br />
-       <RedditButton {...redditPorps} />
+       <RedditButton {...redditProps} />
      </div>
    )
  }
