@@ -9,7 +9,8 @@ import {
   GoogleHangoutButton,
   PinterestButton,
   WhatsAppButton,
-  RedditButton
+  RedditButton,
+  EmailButton,
 } from '../lib/main.js'; /* 'react-social-buttons' */
 
 class TestComponent extends Component {
@@ -41,6 +42,14 @@ class TestComponent extends Component {
       />
    };
 
+   const emailProps = {
+     subject: 'Test email',
+     cc: 'test@gmail.com',
+     bcc: 'test@gmail.com',
+     body: 'Your test message',
+     button: <span>{'Share via Email'}</span>,
+   };
+
    return (
      <div id="buttons">
        <FacebookLikeButton url={url} />
@@ -60,6 +69,8 @@ class TestComponent extends Component {
        <WhatsAppButton {...whatsAppProps} />
        <br />
        <RedditButton {...redditProps} />
+       <br />
+       <EmailButton {...emailProps} />
      </div>
    )
  }
