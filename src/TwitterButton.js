@@ -1,19 +1,19 @@
 import ReactDOM from 'react-dom'
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
-export default class TwitterButton extends React.Component{
+export default class TwitterButton extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { initalized : false }
+    this.state = { initalized: false }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.init()
   }
 
-  init () {
-    if(this.state.initalized){
+  init() {
+    if (this.state.initalized) {
       return
     }
     var twitterbutton = ReactDOM.findDOMNode(this.refs.twitterbutton)
@@ -23,19 +23,19 @@ export default class TwitterButton extends React.Component{
     twitterscript.onload = this.renderWidget.bind(this)
     twitterbutton.parentNode.appendChild(twitterscript)
 
-    this.setState({initalized: true });
+    this.setState({ initalized: true });
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     let elem = document.getElementById("twitter-wjs")
-    if(elem !== undefined){
+    if (elem !== undefined) {
       elem.parentNode.removeChild(elem);
     }
   }
 
-  renderWidget(){
+  renderWidget() {
     let text = ''
-    if(this.props.text != undefined){
+    if (this.props.text != undefined) {
       text = this.props.text
     }
 
@@ -46,7 +46,7 @@ export default class TwitterButton extends React.Component{
     );
   }
 
-  render(){
+  render() {
     return <div ref="twitterbutton" />
   }
 }

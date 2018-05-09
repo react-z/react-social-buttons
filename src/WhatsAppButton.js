@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom'
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
 export default class WhatsAppButton extends Component {
-  render () {
+  render() {
     const props = this.props;
 
     return (
@@ -13,7 +13,9 @@ export default class WhatsAppButton extends Component {
   };
 }
 
+/*
 WhatsAppButton.propTypes = {
   msg: PropTypes.string.isRequired,
   button: PropTypes.node.isRequired,
 };
+*/
