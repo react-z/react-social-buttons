@@ -1,7 +1,14 @@
-import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class WhatsAppButton extends Component {
+  static get propTypes () {
+    return {
+      msg: PropTypes.string.isRequired,
+      button: PropTypes.node.isRequired
+    }
+  }
+
   render() {
     const props = this.props;
 
@@ -12,10 +19,3 @@ export default class WhatsAppButton extends Component {
     );
   };
 }
-
-/*
-WhatsAppButton.propTypes = {
-  msg: PropTypes.string.isRequired,
-  button: PropTypes.node.isRequired,
-};
-*/

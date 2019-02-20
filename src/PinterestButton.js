@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
 
 export default class PinterestButton extends Component {
-
   constructor(props) {
     super(props)
     this.state = { initalized: false }
@@ -20,7 +19,6 @@ export default class PinterestButton extends Component {
     var pinscript = document.createElement("script")
     pinscript.src = "//assets.pinterest.com/js/pinit.js"
     pinscript.id = 'pinit-script'
-    pinscript.onload = this.renderWidget.bind(this)
     pinbutton.parentNode.appendChild(pinscript)
 
     this.setState({ initalized: true });
@@ -28,12 +26,6 @@ export default class PinterestButton extends Component {
 
   componentWillUnmount() {
     let elem = document.getElementById("pinit-script")
-    if (elem !== undefined) {
-      //elem.parentNode.removeChild(elem);
-    }
-  }
-
-  renderWidget() {
   }
 
   render() {

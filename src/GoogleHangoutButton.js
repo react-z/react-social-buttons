@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
 
 export default class GoogleHangoutButton extends Component {
-
   constructor(props) {
     super(props)
     this.state = { initalized: false }

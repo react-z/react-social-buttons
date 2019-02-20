@@ -1,7 +1,13 @@
-import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class RedditButton extends Component {
+  static get propTypes () {
+    return {
+      url: PropTypes.string.isRequired,
+      button: PropTypes.node.isRequired
+    }
+  }
 
   redirectToReddit() {
     window.location.href = `//www.reddit.com/submit?url=` +
@@ -21,9 +27,3 @@ export default class RedditButton extends Component {
     );
   };
 }
-/*
-RedditButton.propTypes = {
-  url: PropTypes.string.isRequired,
-  button: PropTypes.node.isRequired,
-};
-*/

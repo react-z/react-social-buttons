@@ -26,6 +26,8 @@ yarn add react-social-buttons
 
 #### `1.0.9` uses React `^15.1.0`
 
+#### `1.1.0` uses React `^16.0.0`
+
 ## Use
 
 ``` js

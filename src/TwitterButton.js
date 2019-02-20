@@ -1,7 +1,14 @@
 import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class TwitterButton extends Component {
+  static get propTypes () {
+    return {
+      url: PropTypes.string.isRequired,
+      props: PropTypes.string
+    }
+  }
 
   constructor(props) {
     super(props)
