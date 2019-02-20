@@ -11,7 +11,7 @@ import {
   WhatsAppButton,
   RedditButton,
   EmailButton,
-} from '../src/main.js'; /* 'react-social-buttons' */
+} from '../lib/main.js'; /* 'react-social-buttons' */
 
 class TestComponent extends Component {
 
