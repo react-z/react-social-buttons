@@ -44,7 +44,6 @@ export default class GoogleButton extends Component {
       <div ref='gpbutton'
         id='gpbutton'
         className="g-plusone"
-        expandTo='top'
         data-annotation='bubble'
         data-align='left'
         data-width='300'

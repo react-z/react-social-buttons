@@ -17,7 +17,7 @@ Social buttons component for react, includes:
 ## Install
 
 ``` js
-npm install react-social-buttons --save
+yarn add react-social-buttons
 ```
 
 ## Versions
@@ -94,11 +94,17 @@ ReactDOM.render( <TestComponent />, document.getElementById('root') )
 ```
 
 ## Development
+    yarn
+    npm run dev
 
-    npm install
+## Build
+    yarn
     npm run build
-    npm test
-    npm start
+    npm login
+    npm version patch
+    git add -A
+    git push origin master
+    npm publish
 
 ## License
 
