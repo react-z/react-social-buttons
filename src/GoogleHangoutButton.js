@@ -23,34 +23,33 @@ export default class GoogleHangoutButton extends Component {
     gpscript.onload = this.renderWidget.bind(this)
     ghbutton.parentNode.appendChild(gpscript)
 
-    this.setState({ initalized: true });
+    this.setState({ initalized: true })
   }
 
   componentWillUnmount() {
     let elem = document.getElementById('gapi')
     if (elem !== undefined) {
-      elem.parentNode.removeChild(elem);
+      elem.parentNode.removeChild(elem)
     }
   }
 
   renderWidget() {
-
     gapi.hangout.render('ghbutton', {
-      'topic': 'cats',
-      'render': 'createhangout',
-      'hangout_type': 'onair',
-      'initial_apps': [{ 'app_id': '184219133185', 'start_data': 'dQw4w9WgXcQ', 'app_type': 'ROOM_APP' }],
-      'widget_size': 72
-    });
-
+      topic: 'cats',
+      render: 'createhangout',
+      hangout_type: 'onair',
+      initial_apps: [
+        {
+          app_id: '184219133185',
+          start_data: 'dQw4w9WgXcQ',
+          app_type: 'ROOM_APP'
+        }
+      ],
+      widget_size: 72
+    })
   }
 
   render() {
-    return (
-      <div ref='ghbutton'
-        id='ghbutton' >
-      </div>
-    );
-
+    return <div ref="ghbutton" id="ghbutton" />
   }
 }

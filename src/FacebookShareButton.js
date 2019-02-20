@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class FacebookShareButton extends Component {
-  static get propTypes () {
+  static get propTypes() {
     return {
       url: PropTypes.string
     }
@@ -30,13 +30,13 @@ export default class FacebookShareButton extends Component {
     fbscript.onload = this.renderWidget.bind(this)
     fbsharebutton.parentNode.appendChild(fbscript)
 
-    this.setState({ initalized: true });
+    this.setState({ initalized: true })
   }
 
   componentWillUnmount() {
     let elem = document.getElementById('facebook-jssdk')
     if (elem !== undefined) {
-      elem.parentNode.removeChild(elem);
+      elem.parentNode.removeChild(elem)
     }
   }
 
@@ -45,24 +45,23 @@ export default class FacebookShareButton extends Component {
        need to detect if it has already been parsed.
        if coming from react router it may need reparsing.
     */
-    setTimeout(function () {
+    setTimeout(function() {
       let elem = document.getElementById('fbbutton')
       if (elem.getAttribute('fb-xfbml-state') === null) {
-        FB.XFBML.parse();
+        FB.XFBML.parse()
       }
     }, 1000)
   }
 
   render() {
     return (
-
-      <div id='fbsharebutton'
+      <div
+        id="fbsharebutton"
         ref="fbsharebutton"
         className="fb-share-button"
         data-href={this.props.url}
-        data-layout="button_count" >
-      </div>
-    );
-
+        data-layout="button_count"
+      />
+    )
   }
 }

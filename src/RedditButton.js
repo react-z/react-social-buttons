@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class RedditButton extends Component {
-  static get propTypes () {
+  static get propTypes() {
     return {
       url: PropTypes.string.isRequired,
       button: PropTypes.node.isRequired
@@ -10,20 +10,19 @@ export default class RedditButton extends Component {
   }
 
   redirectToReddit() {
-    window.location.href = `//www.reddit.com/submit?url=` +
-      `${encodeURIComponent(window.location)}`;
+    window.location.href =
+      `//www.reddit.com/submit?url=` + `${encodeURIComponent(window.location)}`
 
-    return false;
+    return false
   }
 
   render() {
-    const props = this.props;
+    const props = this.props
 
     return (
-      <a href={'//www.reddit.com/submit'}
-        onClick={this.redirectToReddit} >
+      <a href={'//www.reddit.com/submit'} onClick={this.redirectToReddit}>
         {props.button}
       </a>
-    );
-  };
+    )
+  }
 }

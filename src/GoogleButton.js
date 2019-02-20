@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class GoogleButton extends Component {
-  static get propTypes () {
+  static get propTypes() {
     return {
       url: PropTypes.string
     }
@@ -30,34 +30,33 @@ export default class GoogleButton extends Component {
     gpscript.onload = this.renderWidget.bind(this)
     gpbutton.parentNode.appendChild(gpscript)
 
-    this.setState({ initalized: true });
+    this.setState({ initalized: true })
   }
 
   componentWillUnmount() {
     let elem = document.getElementById('gapi')
     if (elem !== undefined) {
-      elem.parentNode.removeChild(elem);
+      elem.parentNode.removeChild(elem)
     }
   }
 
   renderWidget() {
-    gapi.plusone.render('gpbutton');
+    gapi.plusone.render('gpbutton')
   }
 
   render() {
     return (
-
-      <div ref='gpbutton'
-        id='gpbutton'
+      <div
+        ref="gpbutton"
+        id="gpbutton"
         className="g-plusone"
-        data-annotation='bubble'
-        data-align='left'
-        data-width='300'
-        data-size='standard'
-        data-recommendations='true'
-        data-href={this.props.url} >
-      </div>
-    );
-
+        data-annotation="bubble"
+        data-align="left"
+        data-width="300"
+        data-size="standard"
+        data-recommendations="true"
+        data-href={this.props.url}
+      />
+    )
   }
 }

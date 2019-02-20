@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class TwitterButton extends Component {
-  static get propTypes () {
+  static get propTypes() {
     return {
       url: PropTypes.string.isRequired,
       props: PropTypes.string
@@ -24,19 +24,19 @@ export default class TwitterButton extends Component {
       return
     }
     var twitterbutton = ReactDOM.findDOMNode(this.refs.twitterbutton)
-    var twitterscript = document.createElement("script")
-    twitterscript.src = "//platform.twitter.com/widgets.js"
+    var twitterscript = document.createElement('script')
+    twitterscript.src = '//platform.twitter.com/widgets.js'
     twitterscript.id = 'twitter-wjs'
     twitterscript.onload = this.renderWidget.bind(this)
     twitterbutton.parentNode.appendChild(twitterscript)
 
-    this.setState({ initalized: true });
+    this.setState({ initalized: true })
   }
 
   componentWillUnmount() {
-    let elem = document.getElementById("twitter-wjs")
+    let elem = document.getElementById('twitter-wjs')
     if (elem !== undefined) {
-      elem.parentNode.removeChild(elem);
+      elem.parentNode.removeChild(elem)
     }
   }
 
@@ -50,7 +50,7 @@ export default class TwitterButton extends Component {
       this.props.url,
       ReactDOM.findDOMNode(this.refs.twitterbutton),
       { text: text }
-    );
+    )
   }
 
   render() {

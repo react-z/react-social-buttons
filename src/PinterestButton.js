@@ -15,29 +15,32 @@ export default class PinterestButton extends Component {
     if (this.state.initalized) {
       return
     }
-    var pinbutton = ReactDOM.findDOMNode(this.refs.pinbutton)
-    var pinscript = document.createElement("script")
-    pinscript.src = "//assets.pinterest.com/js/pinit.js"
+    const pinbutton = ReactDOM.findDOMNode(this.refs.pinbutton)
+    const pinscript = document.createElement('script')
+    pinscript.src = '//assets.pinterest.com/js/pinit.js'
     pinscript.id = 'pinit-script'
     pinbutton.parentNode.appendChild(pinscript)
 
-    this.setState({ initalized: true });
+    this.setState({ initalized: true })
   }
 
   componentWillUnmount() {
-    let elem = document.getElementById("pinit-script")
+    let elem = document.getElementById('pinit-script')
+    if (elem !== undefined) {
+      elem.parentNode.removeChild(elem)
+    }
   }
 
   render() {
     return (
-
-      <a ref='pinbutton'
-        id='pinbutton'
-        data-pin-do='buttonBookmark'
-        href='//www.pinterest.com/pin/create/button/' >
+      <a
+        ref="pinbutton"
+        id="pinbutton"
+        data-pin-do="buttonBookmark"
+        href="//www.pinterest.com/pin/create/button/"
+      >
         <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" />
       </a>
-    );
-
+    )
   }
 }

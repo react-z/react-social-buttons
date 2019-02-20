@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class WhatsAppButton extends Component {
-  static get propTypes () {
+  static get propTypes() {
     return {
       msg: PropTypes.string.isRequired,
       button: PropTypes.node.isRequired
@@ -10,12 +10,8 @@ export default class WhatsAppButton extends Component {
   }
 
   render() {
-    const props = this.props;
+    const props = this.props
 
-    return (
-      <a href={`whatsapp://send?text=${props.msg}`}>
-        {props.button}
-      </a>
-    );
-  };
+    return <a href={`whatsapp://send?text=${props.msg}`}>{props.button}</a>
+  }
 }

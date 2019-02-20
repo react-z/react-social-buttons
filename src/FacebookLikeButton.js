@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class FacebookLikeButton extends Component {
-  static get propTypes () {
+  static get propTypes() {
     return {
       url: PropTypes.string
     }
@@ -30,13 +30,13 @@ export default class FacebookLikeButton extends Component {
     fbscript.onload = this.renderWidget.bind(this)
     fbbutton.parentNode.appendChild(fbscript)
 
-    this.setState({ initalized: true });
+    this.setState({ initalized: true })
   }
 
   componentWillUnmount() {
     let elem = document.getElementById('facebook-jssdk')
     if (elem !== undefined) {
-      elem.parentNode.removeChild(elem);
+      elem.parentNode.removeChild(elem)
     }
   }
 
@@ -45,27 +45,26 @@ export default class FacebookLikeButton extends Component {
        need to detect if it has already been parsed.
        if coming from react router it may need reparsing.
     */
-    setTimeout(function () {
+    setTimeout(function() {
       let elem = document.getElementById('fbbutton')
       if (elem.getAttribute('fb-xfbml-state') === null) {
-        FB.XFBML.parse();
+        FB.XFBML.parse()
       }
     }, 1000)
   }
 
   render() {
     return (
-
-      <div id='fbbutton'
+      <div
+        id="fbbutton"
         ref="fbbutton"
         className="fb-like"
         data-href={this.props.url}
         data-layout="standard"
         data-action="like"
         data-show-faces="true"
-        data-share="false">
-      </div>
-    );
-
+        data-share="false"
+      />
+    )
   }
 }
