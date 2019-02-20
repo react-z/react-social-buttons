@@ -1,19 +1,19 @@
 import ReactDOM from 'react-dom'
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
-export default class GoogleButton extends React.Component{
+export default class GoogleButton extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { initalized : false }
+    this.state = { initalized: false }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.init()
   }
 
-  init () {
-    if(this.state.initalized){
+  init() {
+    if (this.state.initalized) {
       return
     }
 
@@ -24,33 +24,33 @@ export default class GoogleButton extends React.Component{
     gpscript.onload = this.renderWidget.bind(this)
     gpbutton.parentNode.appendChild(gpscript)
 
-    this.setState({initalized: true });
+    this.setState({ initalized: true });
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     let elem = document.getElementById('gapi')
-    if(elem !== undefined){
+    if (elem !== undefined) {
       elem.parentNode.removeChild(elem);
     }
   }
 
-  renderWidget(){
+  renderWidget() {
     gapi.plusone.render('gpbutton');
   }
 
-  render(){
+  render() {
     return (
 
       <div ref='gpbutton'
-           id='gpbutton'
-           className="g-plusone"
-           expandTo='top'
-           data-annotation='bubble'
-           data-align='left'
-           data-width='300'
-           data-size='standard'
-           data-recommendations='true'
-           data-href={this.props.url} >
+        id='gpbutton'
+        className="g-plusone"
+        expandTo='top'
+        data-annotation='bubble'
+        data-align='left'
+        data-width='300'
+        data-size='standard'
+        data-recommendations='true'
+        data-href={this.props.url} >
       </div>
     );
 

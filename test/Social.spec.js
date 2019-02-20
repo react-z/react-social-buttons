@@ -19,25 +19,26 @@ import {
 test('Social components', (t) => {
   setupJsdom();
 
+
   const url = 'https://mysite.com';
-  const fb = mount( <FacebookLikeButton url={url} /> );
-  const tw = mount( <TwitterButton url={url} /> );
-  const goo = mount( <GoogleButton url={url} /> );
-  const pin = mount( <PinterestButton url={url} /> );
+  const fb = mount(<FacebookLikeButton url={url} />);
+  const tw = mount(<TwitterButton url={url} />);
+  const goo = mount(<GoogleButton url={url} />);
+  const pin = mount(<PinterestButton url={url} />);
 
   // WhatsAppButton
   const whatsAppProps = {
     msg: 'test',
     button: <span>{'Share via WhatsApp'}</span>,
   };
-  const wapp = mount( <WhatsAppButton {...whatsAppProps} /> );
+  const wapp = mount(<WhatsAppButton {...whatsAppProps} />);
 
   // RedditButton
   const redditPorps = {
     url,
     button: <span>{'Share via Reddit'}</span>,
   };
-  const reddit = mount( <RedditButton {...redditPorps} /> );
+  const reddit = mount(<RedditButton {...redditPorps} />);
 
   // EmailButton
   const emailProps = {
@@ -47,8 +48,9 @@ test('Social components', (t) => {
     body: 'Your test message',
     button: <span>{'Share via Email'}</span>,
   };
-  const email = mount( <EmailButton {...emailProps} /> );
-  
+  const email = mount(<EmailButton {...emailProps} />);
+
+
   t.equal(
     fb.props().url, url, 'url is set for facebook like button'
   );
@@ -70,6 +72,5 @@ test('Social components', (t) => {
   t.equal(
     email.props().subject, emailProps.subject, 'subject is set for email button'
   );
-
   t.end();
 });

@@ -1,19 +1,19 @@
 import ReactDOM from 'react-dom'
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
-export default class GoogleHangoutButton extends React.Component{
+export default class GoogleHangoutButton extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { initalized : false }
+    this.state = { initalized: false }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.init()
   }
 
-  init () {
-    if(this.state.initalized){
+  init() {
+    if (this.state.initalized) {
       return
     }
 
@@ -24,32 +24,32 @@ export default class GoogleHangoutButton extends React.Component{
     gpscript.onload = this.renderWidget.bind(this)
     ghbutton.parentNode.appendChild(gpscript)
 
-    this.setState({initalized: true });
+    this.setState({ initalized: true });
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     let elem = document.getElementById('gapi')
-    if(elem !== undefined){
+    if (elem !== undefined) {
       elem.parentNode.removeChild(elem);
     }
   }
 
-  renderWidget(){
+  renderWidget() {
 
     gapi.hangout.render('ghbutton', {
       'topic': 'cats',
       'render': 'createhangout',
       'hangout_type': 'onair',
-      'initial_apps': [{'app_id' : '184219133185', 'start_data' : 'dQw4w9WgXcQ', 'app_type' : 'ROOM_APP' }],
+      'initial_apps': [{ 'app_id': '184219133185', 'start_data': 'dQw4w9WgXcQ', 'app_type': 'ROOM_APP' }],
       'widget_size': 72
     });
 
   }
 
-  render(){
+  render() {
     return (
       <div ref='ghbutton'
-           id='ghbutton' >
+        id='ghbutton' >
       </div>
     );
 

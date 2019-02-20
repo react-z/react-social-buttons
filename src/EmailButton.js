@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom'
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
 export default class EmailButton extends Component {
-  render () {
+  render() {
     const props = this.props;
     const href = `mailto:?body=${props.body}&subject=${props.subject}&` +
       `cc=${props.cc}&bcc=${props.bcc}`;
@@ -18,6 +18,7 @@ export default class EmailButton extends Component {
   };
 }
 
+/*
 EmailButton.propTypes = {
   style: PropTypes.string,
   subject: PropTypes.string,
@@ -26,3 +27,4 @@ EmailButton.propTypes = {
   body: PropTypes.string.isRequired,
   button: PropTypes.node.isRequired,
 };
+*/
